@@ -1,1 +1,6 @@
-"""Tool metadata and invocation models live here."""
+from pydantic import BaseModel
+
+
+class ToolDefinition(BaseModel):
+    name: str
+    description: str

@@ -57,6 +57,23 @@ Expected response:
 {"status":"ok","service":"vam-ai-agent-service","environment":"local","request_id":"..."}
 ```
 
+## Session Bootstrap
+
+Local development uses a pluggable stub bearer token format until real VAM auth integration is wired in:
+
+```text
+Bearer local:<customer_id>:<active_oem_id>:<customer_oem_relation_id>:<role>
+```
+
+Example:
+
+```bash
+curl -X POST http://127.0.0.1:8000/api/v1/session \
+  -H "Authorization: Bearer local:customer-123:oem-456:relation-789:service_advisor" \
+  -H "Content-Type: application/json" \
+  -d '{}'
+```
+
 ## Design Constraints
 
 - Keep routes thin and push orchestration into services and policies.

@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 
 from app.api.routes.health import router as health_router
+from app.api.routes.session import router as session_router
 from app.core.config import get_settings
 from app.core.logging import configure_logging, get_logger
 from app.middleware.error_handler import register_exception_handlers
@@ -21,6 +22,7 @@ def create_application() -> FastAPI:
     application.state.settings = settings
     application.add_middleware(RequestIDMiddleware)
     application.include_router(health_router)
+    application.include_router(session_router)
     register_exception_handlers(application)
 
     logger = get_logger(__name__)
