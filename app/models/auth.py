@@ -1,1 +1,1 @@
-
+"""Authentication models live here."""

@@ -1,1 +1,1 @@
-
+"""Shared validation helpers live here."""
