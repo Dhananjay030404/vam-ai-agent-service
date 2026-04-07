@@ -1,1 +1,7 @@
-"""Role-based access policy definitions live here."""
+SUPPORTED_ROLES = {
+    "owner",
+    "admin",
+    "service_advisor",
+    "sales_consultant",
+    "customer_support",
+}
